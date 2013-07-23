@@ -282,6 +282,7 @@ void ctobssim::run(void)
     // Initialise counters
     int n_observations = 0;
 
+    log << "gammaspeed:parallel_region_start" << std::endl;
     // From here on the code can be parallelized if OpenMP support
     // is enabled. The code in the following block corresponds to the
     // code that will be executed in each thread
@@ -339,7 +340,7 @@ void ctobssim::run(void)
         }
 
     } // end pragma omp parallel
-    
+    log << "gammaspeed:parallel_region_end" <<std::endl;
     // If more than a single observation has been handled then make sure that
     // an XML file will be used for storage
     if (n_observations > 1) {
