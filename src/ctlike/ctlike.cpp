@@ -253,8 +253,10 @@ void ctlike::run(void)
         log << m_obs << std::endl;
     }
 
+    log << "gammaspeed:real_parallel_start"<<std::endl;
     // Optimize model parameters using LM optimizer
     optimize_lm();
+    log << "gammaspeed:real_parallel_end"<<std::endl;
 
     // Compute number of observed events in all observations
     double num_events = 0.0;
